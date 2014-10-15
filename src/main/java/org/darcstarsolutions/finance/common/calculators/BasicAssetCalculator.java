@@ -2,6 +2,7 @@ package org.darcstarsolutions.finance.common.calculators;
 
 import org.darcstarsolutions.finance.common.Asset;
 import org.darcstarsolutions.finance.common.AssetFactory;
+import org.darcstarsolutions.finance.common.CompoundingType;
 
 /**
  * Created by tetn on 10/15/14.
@@ -10,7 +11,6 @@ public class BasicAssetCalculator<U extends Asset> extends AbstractAssetCalculat
 
     private static BasicAssetCalculator INSTANCE;
 
-    @SuppressWarnings("unchecked")
     public static BasicAssetCalculator getInstance(AssetFactory<? extends Asset> assetFactory){
         if(INSTANCE == null){
             INSTANCE = new BasicAssetCalculator(assetFactory);
@@ -20,5 +20,6 @@ public class BasicAssetCalculator<U extends Asset> extends AbstractAssetCalculat
 
     protected BasicAssetCalculator(AssetFactory<U> assetFactory) {
         super(assetFactory);
+        setCompoundingType(CompoundingType.SIMPLE);
     }
 }

@@ -10,15 +10,15 @@ public interface Instrument extends Asset {
     public static final BigDecimal NO_PAR_VALUE = BigDecimal.ZERO;
     public static final BigDecimal NO_FACE_VALUE = BigDecimal.ZERO;
 
-    BigDecimal getYield();
+    public BigDecimal getYield();
 
-    void setYield(BigDecimal yield);
+    public void setYield(BigDecimal yield);
 
-    BigDecimal getParValue();
+    public BigDecimal getParValue();
 
-    void setParValue(BigDecimal parValue);
+    public void setParValue(BigDecimal parValue);
 
-    BigDecimal getFaceValue();
+    public BigDecimal getFaceValue();
 
-    void setFaceValue(BigDecimal faceValue);
+    public void setFaceValue(BigDecimal faceValue);
 }
