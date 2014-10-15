@@ -11,13 +11,13 @@ public abstract class AbstractAsset implements Asset{
     private String name;
     private BigInteger id;
     private String description;
-    private CUSIP cusip;
+    private ISIN isin;
     private BigDecimal price;
     private BigDecimal quantity;
     private BigDecimal value;
 
-    protected AbstractAsset(String name, CUSIP cusip) {
-        this.cusip = cusip;
+    protected AbstractAsset(String name, ISIN isin) {
+        this.isin = isin;
         this.name = name;
     }
 
@@ -49,12 +49,12 @@ public abstract class AbstractAsset implements Asset{
     }
 
     @Override
-    public CUSIP getCUSIP() {
-        return cusip;
+    public ISIN getISIN() {
+        return isin;
     }
 
-    public void setCusip(CUSIP cusip) {
-        this.cusip = cusip;
+    public void setISIN(ISIN isin) {
+        this.isin = isin;
     }
 
     @Override
@@ -88,8 +88,7 @@ public abstract class AbstractAsset implements Asset{
     @Override
     public boolean sameAsset(Asset asset) {
         Class<?> clazz = getClass();
-        if(!(asset.getClass().equals(clazz))) return false;
-        return getCUSIP().equals(asset.getCUSIP());
+        return asset.getClass().equals(clazz) && getISIN().equals(asset.getISIN());
     }
 
     @Override

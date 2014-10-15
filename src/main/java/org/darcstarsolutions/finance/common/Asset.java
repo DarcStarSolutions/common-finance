@@ -15,7 +15,7 @@ public interface Asset extends Serializable, Comparable<Asset>{
 
     public String getDescription();
 
-    public CUSIP getCUSIP();
+    public ISIN getISIN();
 
     public BigDecimal getPrice();
 
