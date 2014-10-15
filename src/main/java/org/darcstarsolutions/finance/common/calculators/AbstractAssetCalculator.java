@@ -3,6 +3,7 @@ package org.darcstarsolutions.finance.common.calculators;
 import org.darcstarsolutions.finance.common.Asset;
 import org.darcstarsolutions.finance.common.AssetCalculator;
 import org.darcstarsolutions.finance.common.AssetFactory;
+import org.darcstarsolutions.finance.common.CompoundingType;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -13,6 +14,8 @@ import java.math.BigInteger;
 public abstract class  AbstractAssetCalculator<T extends Asset, U extends T> implements AssetCalculator<T, U> {
 
     private AssetFactory<U> assetFactory;
+
+    private CompoundingType compoundingType;
 
     protected AbstractAssetCalculator(AssetFactory<U> assetFactory) {
         setAssetFactory(assetFactory);
@@ -26,6 +29,14 @@ public abstract class  AbstractAssetCalculator<T extends Asset, U extends T> imp
     @Override
     public void setAssetFactory(AssetFactory<U> assetFactory) {
         this.assetFactory = assetFactory;
+    }
+
+    public CompoundingType getCompoundingType() {
+        return compoundingType;
+    }
+
+    public void setCompoundingType(CompoundingType compoundingType) {
+        this.compoundingType = compoundingType;
     }
 
     @Override

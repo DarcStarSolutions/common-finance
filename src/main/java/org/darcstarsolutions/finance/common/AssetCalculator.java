@@ -9,6 +9,10 @@ public interface AssetCalculator<T extends Asset, U extends T> {
 
     public void setAssetFactory(AssetFactory<U> assetFactory);
 
+    public CompoundingType getCompoundingType();
+
+    public void setCompoundingType(CompoundingType compoundingType);
+
     public U add(U asset1, U asset2);
 
     public  U subtract(U asset1, U asset2);
