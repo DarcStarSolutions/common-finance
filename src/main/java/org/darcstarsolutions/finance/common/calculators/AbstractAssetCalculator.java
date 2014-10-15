@@ -65,8 +65,7 @@ public abstract class  AbstractAssetCalculator<T extends Asset, U extends T> imp
 
     @Override
     public U negate(U asset) {
-        U newAsset = null;
-        newAsset = getAssetFactory().copyAsset(asset);
+        U newAsset = getAssetFactory().copyAsset(asset);
         newAsset.setId(BigInteger.ZERO);
         newAsset.setQuantity(asset.getQuantity().negate());
         newAsset.setPrice(asset.getPrice());
