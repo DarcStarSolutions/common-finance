@@ -1,7 +1,5 @@
 package org.darcstarsolutions.finance.common;
 
-import com.sun.javafx.beans.annotations.NonNull;
-
 import java.io.Serializable;
 
 /**
@@ -13,7 +11,7 @@ public class CUSIP implements Serializable{
 
     private String value;
 
-    public CUSIP(@NonNull String value){
+    public CUSIP(String value){
         this.value = value;
     }
 
