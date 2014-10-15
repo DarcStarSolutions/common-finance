@@ -43,5 +43,7 @@ artifactory {
 
 dependencies {
     compile 'joda-time:joda-time:2.3'
+    compile 'org.slf4j:slf4j-api:1.7.7'
     testCompile 'junit:junit:4.11'
+    testCompile 'ch.qos.logback:logback-clasic:1.0.13'
 }
