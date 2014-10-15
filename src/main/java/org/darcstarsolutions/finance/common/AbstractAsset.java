@@ -35,6 +35,7 @@ public abstract class AbstractAsset implements Asset{
         return id;
     }
 
+    @Override
     public void setId(BigInteger id) {
         this.id = id;
     }
@@ -44,6 +45,7 @@ public abstract class AbstractAsset implements Asset{
         return description;
     }
 
+    @Override
     public void setDescription(String description) {
         this.description = description;
     }
@@ -62,6 +64,7 @@ public abstract class AbstractAsset implements Asset{
         return price;
     }
 
+    @Override
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
@@ -71,6 +74,7 @@ public abstract class AbstractAsset implements Asset{
         return quantity;
     }
 
+    @Override
     public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
     }
@@ -81,7 +85,7 @@ public abstract class AbstractAsset implements Asset{
         return value;
     }
 
-    private void setValue(BigDecimal value) {
+    protected void setValue(BigDecimal value) {
         this.value = value;
     }
 

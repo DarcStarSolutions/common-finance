@@ -5,11 +5,15 @@ package org.darcstarsolutions.finance.common;
  */
 public interface AssetCalculator<T extends Asset> {
 
-    public <U extends T> U add(U asset1, U asset2);
+    public AssetFactory<T> getAssetFactory();
 
-    public <U extends T> U subtract(U asset1, U asset2);
+    public void setAssetFactory(AssetFactory<T> assetFactory);
 
-    public <U extends T> U negate(U asset);
+    public  T add(T asset1, T asset2);
+
+    public  T subtract(T asset1, T asset2);
+
+    public T negate(T asset);
 
 
 }
