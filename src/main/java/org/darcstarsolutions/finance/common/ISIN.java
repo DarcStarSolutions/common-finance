@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class ISIN implements Serializable{
 
+    public static final ISIN DUMMY = new ISIN("000000000000");
 
 
     private final String value;
