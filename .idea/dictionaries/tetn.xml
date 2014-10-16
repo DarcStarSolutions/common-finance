@@ -2,6 +2,7 @@
   <dictionary name="tetn">
     <words>
       <w>cusip</w>
+      <w>putable</w>
     </words>
   </dictionary>
 </component>

@@ -7,14 +7,13 @@ import java.math.BigDecimal;
 /**
  * Created by tetn on 10/16/14.
  */
-public class StandardMaturity implements Maturing {
+public class StandardMaturity extends StandardTemporal implements Maturing {
 
     private LocalDate maturityDate;
-    private LocalDate issueDate;
     private BigDecimal yieldAtMaturity;
 
     public StandardMaturity(LocalDate issueDate, LocalDate maturityDate){
-        setIssueDate(issueDate);
+        super(issueDate);
         setMaturityDate(maturityDate);
     }
 
@@ -29,16 +28,6 @@ public class StandardMaturity implements Maturing {
     }
 
     @Override
-    public LocalDate getIssueDate() {
-        return issueDate;
-    }
-
-    @Override
-    public void setIssueDate(LocalDate issueDate) {
-        this.issueDate = issueDate;
-    }
-
-    @Override
     public LocalDate getMaturityDate() {
         return maturityDate;
     }
@@ -46,16 +35,6 @@ public class StandardMaturity implements Maturing {
     @Override
     public void setMaturityDate(LocalDate maturityDate){
         this.maturityDate = maturityDate;
-    }
-
-    @Override
-    public LocalDate getCurrentDate() {
-        return LocalDate.now();
-    }
-
-    @Override
-    public LocalDate getCurrentDate(DateTimeZone dateTimeZone){
-        return LocalDate.now(dateTimeZone);
     }
 
     @Override

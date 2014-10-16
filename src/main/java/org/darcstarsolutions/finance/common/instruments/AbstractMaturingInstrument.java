@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 /**
  * Created by tetn on 10/16/14.
  */
-public class AbstractMaturingInstrument extends AbstractInstrument implements Instrument, Maturing {
+public class AbstractMaturingInstrument extends AbstractInstrument implements MaturingInstrument {
 
     private Maturing maturing;
 
