@@ -79,7 +79,7 @@ public class RealAssetFactoryTest {
         assertThat(testRealAsset.getName(), equalTo(asset2.getName()));
         assertThat(testRealAsset.getISIN(), equalTo(asset2.getISIN()));
         assertThat(testRealAsset.getDescription(), equalTo(asset2.getDescription()));
-        assertThat(testRealAsset.getId(), equalTo(asset2.getId()));
+        assertThat(testRealAsset.getId(), equalTo(BigInteger.ZERO));
         assertThat(testRealAsset.getPrice(), equalTo(asset2.getPrice()));
         assertThat(testRealAsset.getQuantity(), equalTo(asset2.getQuantity()));
         assertThat(testRealAsset.getValue(), equalTo(asset2.getValue()));

@@ -11,5 +11,7 @@ public interface InstrumentCalculator<T extends Instrument, U extends T> extends
 
     U calculateParValue(U instrument);
 
+    U calculateNetPresentValue(U instrument);
+
     U calculateParValueAndDetermineParType(U instrument);
 }

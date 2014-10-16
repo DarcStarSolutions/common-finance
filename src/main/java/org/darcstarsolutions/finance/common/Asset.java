@@ -33,6 +33,10 @@ public interface Asset extends Serializable, Comparable<Asset>{
 
     public BigDecimal getValue();
 
+    public BigDecimal getMarketValue();
+
+    public void setMarketValue(BigDecimal marketValue);
+
     public boolean sameAsset(Asset asset);
 
 }

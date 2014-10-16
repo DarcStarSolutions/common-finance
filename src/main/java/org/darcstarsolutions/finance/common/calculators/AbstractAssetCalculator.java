@@ -1,9 +1,6 @@
 package org.darcstarsolutions.finance.common.calculators;
 
-import org.darcstarsolutions.finance.common.Asset;
-import org.darcstarsolutions.finance.common.AssetCalculator;
-import org.darcstarsolutions.finance.common.AssetFactory;
-import org.darcstarsolutions.finance.common.CompoundingType;
+import org.darcstarsolutions.finance.common.*;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -16,6 +13,8 @@ public abstract class  AbstractAssetCalculator<T extends Asset, U extends T> imp
     private AssetFactory<U> assetFactory;
 
     private CompoundingType compoundingType;
+
+    private CompoundingPeriod compoundingPeriod;
 
     protected AbstractAssetCalculator(AssetFactory<U> assetFactory) {
         setAssetFactory(assetFactory);
@@ -40,10 +39,20 @@ public abstract class  AbstractAssetCalculator<T extends Asset, U extends T> imp
     }
 
     @Override
+    public CompoundingPeriod getCompoundingPeriod() {
+        return compoundingPeriod;
+    }
+
+    @Override
+    public void setCompoundingPeriod(CompoundingPeriod compoundingPeriod) {
+        this.compoundingPeriod = compoundingPeriod;
+    }
+
+    @Override
     public U add(U asset1, U asset2) {
         U newAsset = null;
         if(asset1.sameAsset(asset2)){
-            newAsset = getAssetFactory().getAsset(asset1);
+            newAsset = getAssetFactory().copyAsset(asset1);
             newAsset.setQuantity(asset1.getQuantity().add(asset2.getQuantity()));
             BigDecimal value = asset1.getValue().add(asset2.getValue());
             newAsset.setPrice(value.divide(newAsset.getQuantity()));
@@ -55,7 +64,7 @@ public abstract class  AbstractAssetCalculator<T extends Asset, U extends T> imp
     public  U subtract(U asset1, U asset2) {
         U newAsset = null;
         if(asset1.sameAsset(asset2)){
-            newAsset = getAssetFactory().getAsset(asset1);
+            newAsset = getAssetFactory().copyAsset(asset1);
             newAsset.setQuantity(asset1.getQuantity().subtract(asset2.getQuantity()));
             BigDecimal value = asset1.getValue().subtract(asset2.getValue());
             newAsset.setPrice(value.divide(newAsset.getQuantity()));

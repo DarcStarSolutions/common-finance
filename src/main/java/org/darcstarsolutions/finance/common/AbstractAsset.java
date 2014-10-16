@@ -16,6 +16,7 @@ public abstract class AbstractAsset implements Asset{
     private BigDecimal price;
     private BigDecimal quantity;
     private BigDecimal value;
+    private BigDecimal marketValue;
 
     protected AbstractAsset(String name, ISIN isin) {
         this(name, isin, AssetType.NA);
@@ -109,6 +110,16 @@ public abstract class AbstractAsset implements Asset{
     public boolean sameAsset(Asset asset) {
         Class<?> clazz = getClass();
         return asset.getClass().equals(clazz) && getISIN().equals(asset.getISIN());
+    }
+
+    @Override
+    public BigDecimal getMarketValue() {
+        return marketValue;
+    }
+
+    @Override
+    public void setMarketValue(BigDecimal marketValue) {
+        this.marketValue = marketValue;
     }
 
     @Override

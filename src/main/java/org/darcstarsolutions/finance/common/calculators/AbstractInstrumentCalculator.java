@@ -17,9 +17,9 @@ public class AbstractInstrumentCalculator<T extends Instrument, U extends T> ext
     public U determineParType(U instrument) {
         U newInstrument = getAssetFactory().copyAsset(instrument);
         BigDecimal parValue = newInstrument.getParValue();
-        BigDecimal faceValue = newInstrument.getFaceValue();
-        if ((parValue!= Instrument.NO_PAR_VALUE)&&(faceValue!=Instrument.NO_FACE_VALUE)){
-            int comparison = parValue.compareTo(faceValue);
+        BigDecimal marketValue = newInstrument.getMarketValue();
+        if ((parValue!= Instrument.NO_PAR_VALUE)&&(marketValue!=Instrument.NO_FACE_VALUE)){
+            int comparison = parValue.compareTo(marketValue);
             if(comparison==0){
                 newInstrument.setParType(ParType.AT);
             }else if(comparison < 0){
@@ -37,11 +37,22 @@ public class AbstractInstrumentCalculator<T extends Instrument, U extends T> ext
 
     @Override
     public U calculateYield(U instrument) {
-        return null;
+        U newInstrument = getAssetFactory().copyAsset(instrument);
+        BigDecimal faceValue = newInstrument.getFaceValue();
+        BigDecimal marketValue = newInstrument.getMarketValue();
+        BigDecimal priceDifference = faceValue.subtract(marketValue);
+        BigDecimal yield = priceDifference.divide(faceValue);
+        newInstrument.setYield(yield);
+        return newInstrument;
     }
 
     @Override
     public U calculateParValue(U instrument) {
+        return null;
+    }
+
+    @Override
+    public U calculateNetPresentValue(U instrument) {
         return null;
     }
 

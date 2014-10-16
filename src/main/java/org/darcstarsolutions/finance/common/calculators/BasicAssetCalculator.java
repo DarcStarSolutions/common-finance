@@ -2,6 +2,7 @@ package org.darcstarsolutions.finance.common.calculators;
 
 import org.darcstarsolutions.finance.common.Asset;
 import org.darcstarsolutions.finance.common.AssetFactory;
+import org.darcstarsolutions.finance.common.CompoundingPeriod;
 import org.darcstarsolutions.finance.common.CompoundingType;
 
 /**
@@ -21,5 +22,6 @@ public class BasicAssetCalculator<U extends Asset> extends AbstractAssetCalculat
     protected BasicAssetCalculator(AssetFactory<U> assetFactory) {
         super(assetFactory);
         setCompoundingType(CompoundingType.SIMPLE);
+        setCompoundingPeriod(CompoundingPeriod.ANNUAL);
     }
 }

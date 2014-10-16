@@ -56,7 +56,8 @@ public class RealAssetFactory implements AssetFactory<RealAsset>{
         realAsset.setDescription(asset.getDescription());
         realAsset.setQuantity(asset.getQuantity());
         realAsset.setPrice(asset.getPrice());
-        realAsset.setId(asset.getId());
+        realAsset.setMarketValue(asset.getMarketValue());
+        realAsset.setId(BigInteger.ZERO);
         return realAsset;
     }
 }

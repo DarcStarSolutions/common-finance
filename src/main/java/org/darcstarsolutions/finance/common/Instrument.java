@@ -22,6 +22,10 @@ public interface Instrument extends Asset {
 
     public void setFaceValue(BigDecimal faceValue);
 
+    public BigDecimal getNetPresentValue();
+
+    public void setNetPresentValue(BigDecimal netPresentValue);
+
     ParType getParType();
 
     void setParType(ParType parType);

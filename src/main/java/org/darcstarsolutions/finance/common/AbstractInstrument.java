@@ -10,6 +10,7 @@ public class AbstractInstrument extends AbstractAsset implements Instrument {
     private BigDecimal yield;
     private BigDecimal parValue;
     private BigDecimal faceValue;
+    private BigDecimal netPresentValue;
     private ParType parType;
 
     protected AbstractInstrument(String name, ISIN isin) {
@@ -49,6 +50,16 @@ public class AbstractInstrument extends AbstractAsset implements Instrument {
     @Override
     public void setFaceValue(BigDecimal faceValue) {
         this.faceValue = faceValue;
+    }
+
+    @Override
+    public BigDecimal getNetPresentValue() {
+        return netPresentValue;
+    }
+
+    @Override
+    public void setNetPresentValue(BigDecimal netPresentValue) {
+        this.netPresentValue = netPresentValue;
     }
 
     @Override
