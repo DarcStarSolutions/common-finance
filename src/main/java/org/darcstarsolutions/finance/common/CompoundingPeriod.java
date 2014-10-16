@@ -16,7 +16,7 @@ public enum CompoundingPeriod {
     MONTHLY_30_DAY (30),
     PERENNIAL (-1);
 
-    private int value;
+    private final int value;
 
     CompoundingPeriod(int value) {
         this.value = value;

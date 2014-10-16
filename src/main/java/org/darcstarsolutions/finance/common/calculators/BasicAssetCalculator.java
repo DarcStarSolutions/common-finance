@@ -9,6 +9,7 @@ public class BasicAssetCalculator<U extends Asset> extends AbstractAssetCalculat
 
     private static BasicAssetCalculator INSTANCE;
 
+    @SuppressWarnings("unchecked")
     public static BasicAssetCalculator getInstance(AssetFactory<? extends Asset> assetFactory){
         if(INSTANCE == null){
             INSTANCE = new BasicAssetCalculator(assetFactory);

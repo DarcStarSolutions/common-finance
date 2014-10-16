@@ -30,7 +30,7 @@ public abstract class AbstractInstrumentCalculator<T extends Instrument, U exten
 
     protected ParType determineParType(BigDecimal parValue, BigDecimal marketValue) {
         ParType parType = ParType.NONE;
-        if ((parValue!= Instrument.NO_PAR_VALUE)&&(marketValue!=Instrument.NO_FACE_VALUE)){
+        if (!(parValue.equals(Instrument.NO_PAR_VALUE))&&(!marketValue.equals(Instrument.NO_FACE_VALUE))){
             int comparison = parValue.compareTo(marketValue);
             if(comparison==0){
                 parType = ParType.AT;
