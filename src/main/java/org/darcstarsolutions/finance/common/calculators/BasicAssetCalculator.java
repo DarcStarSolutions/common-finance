@@ -1,9 +1,6 @@
 package org.darcstarsolutions.finance.common.calculators;
 
-import org.darcstarsolutions.finance.common.Asset;
-import org.darcstarsolutions.finance.common.AssetFactory;
-import org.darcstarsolutions.finance.common.CompoundingPeriod;
-import org.darcstarsolutions.finance.common.CompoundingType;
+import org.darcstarsolutions.finance.common.*;
 
 /**
  * Created by tetn on 10/15/14.
@@ -20,8 +17,11 @@ public class BasicAssetCalculator<U extends Asset> extends AbstractAssetCalculat
     }
 
     protected BasicAssetCalculator(AssetFactory<U> assetFactory) {
-        super(assetFactory);
-        setCompoundingType(CompoundingType.SIMPLE);
-        setCompoundingPeriod(CompoundingPeriod.ANNUAL);
+        this(assetFactory, CompoundingType.SIMPLE, CompoundingPeriod.ANNUAL);
+
+    }
+
+    protected BasicAssetCalculator(AssetFactory<U> assetFactory, CompoundingType compoundingType, CompoundingPeriod compoundingPeriod ){
+        super(assetFactory, compoundingType, compoundingPeriod);
     }
 }

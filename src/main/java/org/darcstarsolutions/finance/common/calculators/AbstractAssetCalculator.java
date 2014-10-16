@@ -17,8 +17,16 @@ public abstract class  AbstractAssetCalculator<T extends Asset, U extends T> imp
     private CompoundingPeriod compoundingPeriod;
 
     protected AbstractAssetCalculator(AssetFactory<U> assetFactory) {
-        setAssetFactory(assetFactory);
+        this(assetFactory, CompoundingType.SIMPLE, CompoundingPeriod.ANNUAL);
     }
+
+    protected AbstractAssetCalculator(AssetFactory<U> assetFactory, CompoundingType compoundingType, CompoundingPeriod compoundingPeriod) {
+        setAssetFactory(assetFactory);
+        setCompoundingPeriod(compoundingPeriod);
+        setCompoundingType(compoundingType);
+    }
+
+
 
     @Override
     public AssetFactory<U> getAssetFactory() {

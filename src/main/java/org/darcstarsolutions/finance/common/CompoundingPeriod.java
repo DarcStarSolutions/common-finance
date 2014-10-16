@@ -13,7 +13,8 @@ public enum CompoundingPeriod {
     DAILY_LEAP_YEAR (364),
     DAILY_NO_LEAP (365),
     DAILY_360 (360),
-    MONTHLY_30_DAY (30);
+    MONTHLY_30_DAY (30),
+    PERENNIAL (-1);
 
     private int value;
 
