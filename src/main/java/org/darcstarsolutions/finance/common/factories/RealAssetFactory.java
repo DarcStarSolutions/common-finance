@@ -1,6 +1,7 @@
 package org.darcstarsolutions.finance.common.factories;
 
 import org.darcstarsolutions.finance.common.AssetFactory;
+import org.darcstarsolutions.finance.common.AssetType;
 import org.darcstarsolutions.finance.common.ISIN;
 import org.darcstarsolutions.finance.common.assets.RealAsset;
 

@@ -12,21 +12,28 @@ public abstract class AbstractAsset implements Asset{
     private BigInteger id;
     private String description;
     private ISIN isin;
+    private AssetType assetType;
     private BigDecimal price;
     private BigDecimal quantity;
     private BigDecimal value;
 
     protected AbstractAsset(String name, ISIN isin) {
-        this.isin = isin;
-        this.name = name;
+        this(name, isin, AssetType.NA);
     }
+
+    protected AbstractAsset(String name, ISIN isin, AssetType assetType) {
+        setISIN(isin);
+        setName(name);
+        setAssetType(assetType);
+    }
+
 
     @Override
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
@@ -51,11 +58,20 @@ public abstract class AbstractAsset implements Asset{
     }
 
     @Override
+    public AssetType getAssetType() {
+        return assetType;
+    }
+
+    protected void setAssetType(AssetType assetType) {
+        this.assetType = assetType;
+    }
+
+    @Override
     public ISIN getISIN() {
         return isin;
     }
 
-    public void setISIN(ISIN isin) {
+    protected void setISIN(ISIN isin) {
         this.isin = isin;
     }
 

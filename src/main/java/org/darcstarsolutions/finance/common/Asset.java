@@ -21,6 +21,8 @@ public interface Asset extends Serializable, Comparable<Asset>{
 
     public ISIN getISIN();
 
+    public AssetType getAssetType();
+
     public BigDecimal getPrice();
 
     public void setPrice(BigDecimal price);

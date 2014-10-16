@@ -21,4 +21,8 @@ public interface Instrument extends Asset {
     public BigDecimal getFaceValue();
 
     public void setFaceValue(BigDecimal faceValue);
+
+    ParType getParType();
+
+    void setParType(ParType parType);
 }
