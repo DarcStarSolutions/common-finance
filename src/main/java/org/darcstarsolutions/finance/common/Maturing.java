@@ -23,16 +23,29 @@ public interface Maturing {
 
     public LocalDate getCurrentDate();
 
+    LocalDate getCurrentDate(DateTimeZone dateTimeZone);
+
     public Duration getDurationUntilMaturity();
+
+    Duration getDurationUntilMaturity(LocalDate date);
 
     public Days getDaysUntilMaturity();
 
+    Days getDaysUntilMaturity(LocalDate date);
+
     public Period getPeriodUntilMaturity();
+
+    Period getPeriodUntilMaturity(LocalDate date);
 
     public Weeks getWeeksUntilMaturity();
 
+    Weeks getWeeksUntilMaturity(LocalDate date);
+
     public Months getMonthsUntilMaturity();
+
+    Months getMonthsUntilMaturity(LocalDate date);
 
     public Years getYearsUntilMaturity();
 
+    Years getYearsUntilMaturity(LocalDate date);
 }
