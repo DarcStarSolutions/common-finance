@@ -13,8 +13,13 @@ public class AbstractInstrument extends AbstractAsset implements Instrument {
     private ParType parType;
 
     protected AbstractInstrument(String name, ISIN isin) {
-        super(name, isin);
+        this(name, isin, AssetType.NA);
     }
+
+    protected AbstractInstrument(String name, ISIN isin, AssetType assetType) {
+        super(name, isin, assetType);
+    }
+
 
     @Override
     public BigDecimal getYield() {

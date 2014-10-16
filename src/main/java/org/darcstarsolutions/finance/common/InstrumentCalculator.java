@@ -5,4 +5,11 @@ package org.darcstarsolutions.finance.common;
  */
 public interface InstrumentCalculator<T extends Instrument, U extends T> extends AssetCalculator<T, U> {
 
+    U determineParType(U instrument);
+
+    U calculateYield(U instrument);
+
+    U calculateParValue(U instrument);
+
+    U calculateParValueAndDetermineParType(U instrument);
 }
