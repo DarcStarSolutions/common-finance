@@ -17,11 +17,4 @@ public interface AssetCalculator<T extends Asset, U extends T> {
 
     public void setCompoundingPeriod(CompoundingPeriod compoundingPeriod);
 
-    public U add(U asset1, U asset2);
-
-    public  U subtract(U asset1, U asset2);
-
-    public U negate(U asset);
-
-
 }
