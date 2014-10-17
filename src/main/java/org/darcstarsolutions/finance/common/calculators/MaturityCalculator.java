@@ -8,7 +8,7 @@ import org.joda.time.*;
  */
 public class MaturityCalculator {
 
-    private Maturing maturing;
+    private final Maturing maturing;
 
     public MaturityCalculator(Maturing maturing) {
         this.maturing = maturing;
