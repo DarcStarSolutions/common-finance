@@ -1,6 +1,5 @@
 package org.darcstarsolutions.finance.common;
 
-import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
 
 /**
@@ -25,14 +24,4 @@ public class StandardTemporal implements Temporal {
         this.issueDate = issueDate;
     }
 
-    @Override
-    public LocalDate getCurrentDate() {
-        return LocalDate.now();
-    }
-
-
-    @Override
-    public LocalDate getCurrentDate(DateTimeZone dateTimeZone){
-        return LocalDate.now(dateTimeZone);
-    }
 }

@@ -1,7 +1,10 @@
 package org.darcstarsolutions.finance.common.instruments;
 
-import org.darcstarsolutions.finance.common.*;
-import org.joda.time.*;
+import org.darcstarsolutions.finance.common.AbstractInstrument;
+import org.darcstarsolutions.finance.common.ISIN;
+import org.darcstarsolutions.finance.common.Maturing;
+import org.darcstarsolutions.finance.common.StandardMaturing;
+import org.joda.time.LocalDate;
 
 import java.math.BigDecimal;
 
@@ -19,7 +22,7 @@ public class AbstractMaturingInstrument extends AbstractInstrument implements Ma
 
     public AbstractMaturingInstrument(String name, ISIN isin, LocalDate issueDate, LocalDate maturityDate) {
         super(name, isin);
-        setMaturing(new StandardMaturity(issueDate, maturityDate));
+        setMaturing(new StandardMaturing(issueDate, maturityDate));
     }
 
     public Maturing getMaturing() {
@@ -60,73 +63,4 @@ public class AbstractMaturingInstrument extends AbstractInstrument implements Ma
         getMaturing().setMaturityDate(maturityDate);
     }
 
-    @Override
-    public LocalDate getCurrentDate() {
-        return getMaturing().getCurrentDate();
-    }
-
-    @Override
-    public LocalDate getCurrentDate(DateTimeZone dateTimeZone) {
-        return getMaturing().getCurrentDate(dateTimeZone);
-    }
-
-    @Override
-    public Duration getDurationUntilMaturity() {
-        return getMaturing().getDurationUntilMaturity();
-    }
-
-    @Override
-    public Duration getDurationUntilMaturity(LocalDate date) {
-        return getMaturing().getDurationUntilMaturity(date);
-    }
-
-    @Override
-    public Days getDaysUntilMaturity() {
-        return getMaturing().getDaysUntilMaturity();
-    }
-
-    @Override
-    public Days getDaysUntilMaturity(LocalDate date) {
-        return getMaturing().getDaysUntilMaturity(date);
-    }
-
-    @Override
-    public Period getPeriodUntilMaturity() {
-        return getMaturing().getPeriodUntilMaturity();
-    }
-
-    @Override
-    public Period getPeriodUntilMaturity(LocalDate date) {
-        return getMaturing().getPeriodUntilMaturity(date);
-    }
-
-    @Override
-    public Weeks getWeeksUntilMaturity() {
-        return getMaturing().getWeeksUntilMaturity();
-    }
-
-    @Override
-    public Weeks getWeeksUntilMaturity(LocalDate date) {
-        return getMaturing().getWeeksUntilMaturity(date);
-    }
-
-    @Override
-    public Months getMonthsUntilMaturity() {
-        return getMaturing().getMonthsUntilMaturity();
-    }
-
-    @Override
-    public Months getMonthsUntilMaturity(LocalDate date) {
-        return getMaturing().getMonthsUntilMaturity(date);
-    }
-
-    @Override
-    public Years getYearsUntilMaturity() {
-        return getMaturing().getYearsUntilMaturity();
-    }
-
-    @Override
-    public Years getYearsUntilMaturity(LocalDate date) {
-        return getMaturing().getYearsUntilMaturity(date);
-    }
 }

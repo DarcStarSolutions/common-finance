@@ -1,6 +1,6 @@
 package org.darcstarsolutions.finance.common;
 
-import org.joda.time.*;
+import org.joda.time.LocalDate;
 
 import java.math.BigDecimal;
 
@@ -17,27 +17,5 @@ public interface Maturing extends Temporal {
 
     void setMaturityDate(LocalDate maturityDate);
 
-    public Duration getDurationUntilMaturity();
 
-    Duration getDurationUntilMaturity(LocalDate date);
-
-    public Days getDaysUntilMaturity();
-
-    Days getDaysUntilMaturity(LocalDate date);
-
-    public Period getPeriodUntilMaturity();
-
-    Period getPeriodUntilMaturity(LocalDate date);
-
-    public Weeks getWeeksUntilMaturity();
-
-    Weeks getWeeksUntilMaturity(LocalDate date);
-
-    public Months getMonthsUntilMaturity();
-
-    Months getMonthsUntilMaturity(LocalDate date);
-
-    public Years getYearsUntilMaturity();
-
-    Years getYearsUntilMaturity(LocalDate date);
 }
