@@ -5,7 +5,8 @@ package org.darcstarsolutions.finance.common;
  */
 public interface AssetFactory<T extends Asset> {
     public T createDefaultAsset();
+
     public T copyAsset(T asset);
 
-   public  T getAsset(T asset1);
+    public T getAsset(T asset1);
 }
